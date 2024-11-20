@@ -477,7 +477,11 @@ class GPIO:
     def cleanup():
         pass
        
-                
+    def close():
+        app.root.quit()
+        app.root.destroy()
+        GPIO.cleanup()
+        sys.exit()   
             
         
         

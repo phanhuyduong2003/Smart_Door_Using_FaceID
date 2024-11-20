@@ -7,6 +7,11 @@ import face_recognition
 import pickle
 import cv2
 import os
+from LCD1602 import LCD1602
+
+lcd = LCD1602()
+lcd.clear()
+lcd.write_string("Train Model")
 
 # our images are located in the dataset folder
 print("[INFO] start processing faces...")
@@ -19,6 +24,8 @@ knownNames = []
 # loop over the image paths
 for (i, imagePath) in enumerate(imagePaths):
 	# extract the person name from the image path
+	lcd.clear()
+	lcd.write_string(f"Processing {i+1}/{len(imagePaths)}")
 	print("[INFO] processing image {}/{}".format(i + 1,
 		len(imagePaths)))
 	name = imagePath.split(os.path.sep)[-2]
@@ -44,6 +51,8 @@ for (i, imagePath) in enumerate(imagePaths):
 		knownNames.append(name)
 
 # dump the facial encodings + names to disk
+lcd.clear()
+lcd.write_string("Save encodings")
 print("[INFO] serializing encodings...")
 data = {"encodings": knownEncodings, "names": knownNames}
 f = open("encodings.pickle", "wb")

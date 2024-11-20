@@ -85,41 +85,23 @@ Chạy lệnh sau:
 pip install -r requirements.txt
 ```
 
-## Bước 3: Chụp ảnh khuôn mặt để lưu trữ dữ liệu cho việc huấn luyện mô hình
-
-Chạy lệnh sau:
-
-```
-python face_shot.py
-```
-
-Chụp khuôn mặt của người cần lưu trữ vào để huấn luyện mô hình, ấn phím `Esc` để thoát quá trình chụp, dữ liệu sẽ tự động được lưu vào
-
-## Bước 4: Huấn luyện mô hình để nhận diện khuôn mặt
-
-Chạy lệnh sau:
-
-```
-python train_model_py
-```
-
-## Bước 5: Kiểm thử nhận diện khuôn mặt (Có thể bỏ qua bước này và chuyển đến bước 6)
-
-Chạy lệnh sau:
-
-```
-python face_rec.py
-```
-
-Cửa sổ nhận diện khuôn mặt sẽ hiện ra, để thoát cửa sổ ấn phím `Esc`
-
-## Bước 6: Chạy hệ thống khoá/mở khoá cửa sử dụng FaceID
+## Bước 3: Chạy hệ thống khoá/mở khoá cửa sử dụng FaceID:
 
 Chạy lệnh sau:
 
 ```
 python setup_system.py
 ```
+
+Trên cửa sổ GPIO giả lập, nhấn nút `GPIO22` để chạy chương trình khoá/mở khoá cửa, nếu muốn thêm khuôn mặt cần nhấn phím `Esc` để thoát chương trình và chuyển đến [Bước 4](#Bước-4-Chụp-ảnh-khuôn-mặt-để-lưu-trữ-dữ-liệu-cho-việc-huấn-luyện-mô-hình)
+
+## Bước 4: Chụp ảnh khuôn mặt để lưu trữ dữ liệu cho việc huấn luyện mô hình
+
+-   Trên cửa sổ GPIO giả lập hiện lên, nhấn nút `GPIO17`
+-   Cửa sổ nhập tên hiện lên, nhập tên người cần thêm và nhấn phím `Enter` trên bàn phím hoặc nút `OK` trên cửa sổ
+-   Cửa sổ chụp ảnh khuôn mặt hiện lên, nhấn chuột vào cửa sổ này và ấn phím `Space` để chụp
+-   Ấn phím `Esc` để thoát quá trình chụp, dữ liệu sẽ tự động được lưu.
+-   Việc huấn luyện sẽ được thực hiện ngay sau khi ấn phím `Esc`, cửa sổ hiển thị tiến trình huấn luyện sẽ được hiện ra và sẽ tự đóng khi huấn luyện xong
 
 # Ghi chú:
 
